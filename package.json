@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/strongloop/strong-pack.git"
   },
-  "author": "Ryan Graham <r.m.graham@gmail.com>",
+  "author": "StrongLoop <egineering@strongloop.com>",
   "license": "Artistic-2.0",
   "bugs": {
     "url": "https://github.com/strongloop/strong-pack/issues"
@@ -22,5 +22,10 @@
     "eslint": "^1.9.0",
     "eslint-config-strongloop": "^1.0.0",
     "tap": "^2.2.0"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "fstream": "^1.0.8",
+    "tar": "^2.2.1"
   }
 }
