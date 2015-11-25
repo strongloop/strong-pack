@@ -21,11 +21,11 @@
   "devDependencies": {
     "eslint": "^1.9.0",
     "eslint-config-strongloop": "^1.0.0",
-    "tap": "^2.2.0"
+    "tap": "^2.2.0",
+    "tar": "^2.2.1"
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "fstream": "^1.0.8",
-    "tar": "^2.2.1"
+    "tar-fs": "^1.8.1"
   }
 }
