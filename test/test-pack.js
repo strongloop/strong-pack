@@ -7,24 +7,25 @@ var test = require('tap').test;
 
 var ignoredAppRoot = path.join(__dirname, 'fixtures', 'ignored-app');
 var ignoredAppFiles = [
-  'ignored-app/.gitignore',
-  'ignored-app/.npmignore',
-  'ignored-app/node_modules/',
-  'ignored-app/node_modules/.bin/',
-  'ignored-app/node_modules/.bin/foo',
-  'ignored-app/node_modules/foo/',
-  'ignored-app/node_modules/foo/.gitignore',
-  'ignored-app/node_modules/foo/.npmignore',
-  'ignored-app/node_modules/foo/cmd.js',
-  'ignored-app/node_modules/foo/node_modules/',
-  'ignored-app/node_modules/foo/node_modules/bar/',
-  'ignored-app/node_modules/foo/node_modules/bar/.gitignore',
-  'ignored-app/node_modules/foo/node_modules/bar/.npmignore',
+  'package',
+  'package/.gitignore',
+  'package/.npmignore',
+  'package/node_modules',
+  'package/node_modules/.bin',
+  'package/node_modules/.bin/foo',
+  'package/node_modules/foo',
+  'package/node_modules/foo/.gitignore',
+  'package/node_modules/foo/.npmignore',
+  'package/node_modules/foo/cmd.js',
+  'package/node_modules/foo/node_modules',
+  'package/node_modules/foo/node_modules/bar',
+  'package/node_modules/foo/node_modules/bar/.gitignore',
+  'package/node_modules/foo/node_modules/bar/.npmignore',
   // this is where bar/.svn/entries would be if it wasn't ignored
-  'ignored-app/node_modules/foo/node_modules/bar/index.js',
-  'ignored-app/node_modules/foo/node_modules/bar/package.json',
-  'ignored-app/node_modules/foo/package.json',
-  'ignored-app/package.json',
+  'package/node_modules/foo/node_modules/bar/index.js',
+  'package/node_modules/foo/node_modules/bar/package.json',
+  'package/node_modules/foo/package.json',
+  'package/package.json',
 ];
 
 test('returns a tar stream of everything', function(t) {
@@ -40,7 +41,7 @@ test('returns a tar stream of everything', function(t) {
   }
 
   function verify() {
-    t.same(visit.paths, ignoredAppFiles, 'all expected paths present');
+    t.same(visit.paths.sort(), ignoredAppFiles, 'all expected paths present');
     t.end();
   }
 });

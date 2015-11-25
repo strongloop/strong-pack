@@ -1,8 +1,8 @@
 'use strict';
 
 var debug = require('debug')('strong-pack');
-var fstream = require('fstream');
-var tar = require('tar');
+var path = require('path');
+var tar = require('tar-fs');
 
 module.exports = exports = pack;
 
@@ -19,26 +19,29 @@ var FILTER = filterize([
 ]);
 
 function pack(folder) {
-  var tarPack = tar.Pack({ noProprietary: true });
-  var contents = fstream.Reader({
-    path: folder,
-    type: 'Directory',
-    isDirectory: true,
-    filter: FILTER,
+  var tarPack = tar.pack(folder, {
+    ignore: FILTER,
+    map: function(header) {
+      if (header.name === '.') {
+        header.name = 'package';
+      } else {
+        header.name = 'package/' + header.name;
+      }
+      return header;
+    },
   });
   if (debug.enabled) {
-    contents.on('error', debug.bind(null, 'err reading folder'));
     tarPack.on('error', debug.bind(null, 'tar creation error'));
   }
-  return contents.pipe(tarPack);
+  return tarPack;
 }
 
 function filterize(patterns) {
   patterns = patterns.map(testable);
   return filter;
   function filter(entry) {
-    var basename = entry.basename;
-    return !patterns.some(function(p) { return p.test(basename); });
+    var basename = path.basename(entry);
+    return patterns.some(function(p) { return p.test(basename); });
   }
   function testable(pattern) {
     if (pattern instanceof RegExp) {
