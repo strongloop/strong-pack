@@ -52,7 +52,9 @@ pump(appTar, gz, tgz, function(err) {
 
 ### License
 
-[Artistic License 2.0](https://opensource.org/licenses/Artistic-2.0)
+This module is dual licensed and can be used under the terms of either:
+ * [Artistic 2.0 License](https://opensource.org/licenses/Artistic-2.0)
+ * [StrongLoop Subscription Agreement](http://strongloop.com/license)
 
 ---
 Copyright &copy; 2015, StrongLoop, an IBM Company
