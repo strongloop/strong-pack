@@ -18,9 +18,17 @@ var FILTER = filterize([
   /^\._/,
 ]);
 
+// If we are running on Windows there won't be any permission bits set so we
+// have to pretend. These get bitwise OR'd with the actual permissions, so we
+// use 0 for platforms that will have real bits already.
+var DMODE = /win32/.test(process.platform) ? parseInt('755', 8) : 0;
+var FMODE = /win32/.test(process.platform) ? parseInt('644', 8) : 0;
+
 function pack(folder) {
   var tarPack = tar.pack(folder, {
     ignore: FILTER,
+    fmode: FMODE,
+    dmode: DMODE,
     map: function(header) {
       if (header.name === '.') {
         header.name = 'package';
