@@ -54,7 +54,6 @@ pump(appTar, gz, tgz, function(err) {
 
 This module is dual licensed and can be used under the terms of either:
  * [Artistic 2.0 License](https://opensource.org/licenses/Artistic-2.0)
- * [StrongLoop Subscription Agreement](http://strongloop.com/license)
 
 ---
-Copyright &copy; 2015, StrongLoop, an IBM Company
+Copyright IBM Corp. 2015,2016. All Rights Reserved.
