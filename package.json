@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/strongloop/strong-pack.git"
   },
-  "author": "StrongLoop <egineering@strongloop.com>",
+  "author": "Ryan Graham <rmg@ca.ibm.com>",
   "license": "Artistic-2.0",
   "bugs": {
     "url": "https://github.com/strongloop/strong-pack/issues"
@@ -20,9 +20,9 @@
   "homepage": "https://github.com/strongloop/strong-pack#readme",
   "devDependencies": {
     "concat-stream": "^1.5.1",
-    "eslint": "^1.9.0",
-    "eslint-config-strongloop": "^1.0.0",
-    "tap": "^2.2.0",
+    "eslint": "^2",
+    "eslint-config-strongloop": "^2",
+    "tap": "^5",
     "tar": "^2.2.1"
   },
   "dependencies": {
