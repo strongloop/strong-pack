@@ -1,6 +1,6 @@
 {
   "name": "strong-pack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Like npm pack but more inclusive",
   "main": "index.js",
   "scripts": {
