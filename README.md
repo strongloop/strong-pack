@@ -52,8 +52,8 @@ pump(appTar, gz, tgz, function(err) {
 
 ### License
 
-This module is dual licensed and can be used under the terms of either:
- * [Artistic 2.0 License](https://opensource.org/licenses/Artistic-2.0)
+This module is released under the terms of the
+[Artistic 2.0 License](https://opensource.org/licenses/Artistic-2.0)
 
 ---
 Copyright IBM Corp. 2015,2016. All Rights Reserved.
